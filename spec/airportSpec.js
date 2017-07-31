@@ -23,4 +23,18 @@ describe("Airport", function() {
     });
   });
 
+  describe("weather", function() {
+    it("prevents takeoff when weather is stormy", function(){
+      airport.land(plane1);
+      airport.badWeather();
+      airport.takeOff(plane1);
+      expect(airport.planes).toContain(plane1);
+    });
+
+    it("prevents landing when weather is stormy", function(){
+      airport.badWeather();
+      airport.land(plane1);
+      expect(airport.planes).not.toContain(plane1);
+    });
+  });
 });
