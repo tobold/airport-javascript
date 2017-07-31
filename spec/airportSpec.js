@@ -9,7 +9,7 @@ describe("Airport", function() {
   describe("landing a plane", function() {
     it("lands a plane", function() {
       airport.land(plane);
-      expect(airport.planes).toInclude(plane);
+      expect(airport.planes).toContain(plane);
     });
   });
 });
